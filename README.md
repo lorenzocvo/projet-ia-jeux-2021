@@ -25,8 +25,8 @@ Les déplacements des équipes obéissent à quelques règles précises:
 
 
 ### Références
-1. David Silver. Cooperative Path-Finding. (https://www.davidsilver.uk/wp-content/uploads/2020/03/coop-path-AIWisdom.pdf)[article]
-2. Marika Ivanová and Pavel Surynek. Adversarial Cooperative Path-finding: Complexity and Algorithms. (https://surynek.net/publications/files/Ivanova-Surynek_ACPF_ICTAI-2014.pdf)[article]    
+1. David Silver. Cooperative Path-Finding. [article](https://www.davidsilver.uk/wp-content/uploads/2020/03/coop-path-AIWisdom.pdf)
+2. Marika Ivanová and Pavel Surynek. Adversarial Cooperative Path-finding: Complexity and Algorithms. [article](https://surynek.net/publications/files/Ivanova-Surynek_ACPF_ICTAI-2014.pdf)
 
 
 
