@@ -5,7 +5,7 @@ Template pour le projet L3 IA et Jeux, 2021, Sorbonne Univ.
 
 Dans un problème de *cooperative path-finding*: on dispose d'un ensemble d'agents qui doivent chacun atteindre une destination qui leur est propre. Il s'agit de trouver un ensemble de chemins, sans collision, qui permette à chaque agent d'atteindre sa destination.
 
-Une approche coordonnée classique permettant d'aborder ce problème est l'algorithme *cooperative A** [1]: les agents cherchent de manière coopérative leur chemin dans un espace tri-dimensionnel (on ajoute le temps, de manière à gérer les conflits éventuels avec les chemins des autres joueurs). On note que les joueurs peuvent donc également faire une pause dans leur déplacement. (De nombreuses autres approches sont envisageables). 
+Une approche coordonnée classique permettant d'aborder ce problème est l'algorithme *cooperative A** [1]: les agents cherchent de manière coopérative leur chemin dans un espace tri-dimensionnel (on ajoute le temps, de manière à gérer les conflits éventuels avec les chemins des autres joueurs). On note que les joueurs peuvent donc également faire une pause dans leur déplacement. (De nombreuses autres approches sont envisageables).
 
 
 L'objet de ce projet est d'étudier une version *adversariale* du cooperative path-finding: plusieurs équipes d'agents sont en compétition et cherchent à atteindre leurs destinations *avant* leurs adversaires. On se limitera dans ce projet à deux équipes.
@@ -67,7 +67,8 @@ Le template de code fourni dans ce repertoire est structuré de la manière suiv
 Les cartes sont dans un sous-répertoire `Cartes`. Celles-ci sont réalisées avec l'éditeur de cartes [Tiled](https://www.mapeditor.org/), que vous pouvez utiliser pour réaliser vos propres cartes. Elles sont organisées en *layers*: dans notre cas le layer `joueur`, le layer `ramassable` qui contient les objets, et le layer `obstacle` qui contient les murs, arbres, etc.
   * un répertoire `search` qui contient les algos de résolution. Il ne contient pour le moment que A* (repris du code montré en cours et instancié pour les grilles 2D avec la distance de Manhattan).
   * un programme `main.py` qui contient un exemple de code vous permettant de prendre en main l'environnement. Ici, deux joueurs cherchent à aller chercher un objet qui leur est attribué au hasard. Le premier joueur utilise A* pour calculer son chemin, tandis que le deuxième joueur fait une marche aléatoire. Comme vous pouvez l'imaginer, il gagne moins souvent...
-  **Attention**: *aucune gestion des collisions n'est réalisée ici. Les agents peuvent donc parfois se retrouver sur la même case*. Il vous faudra bien sûr gérer ces contraintes dans votre projet.
+  > **Attention**: *aucune gestion des collisions n'est réalisée ici. Les agents peuvent donc parfois se retrouver sur la même case*. Il vous faudra bien sûr gérer ces contraintes dans votre projet. Notez que vous ne devez pas utiliser les fichiers `collision.py` etc. qui empêchent au niveau du jeu les collisions. Ce sont ici les agents qui doivent anticiper ces collisions.
+  
 * `docs`, un répertoire vide pour l'instant, qui a vocation a accueillir votre documentation (par exemple vos résultats), et le rapport de fin du projet (qui pourra prendre la forme d'un pdf de 5 pages max, ou d'un notebook).
 
 Le template n'est bien sûr fourni qu'à titre d'exemple, vous pouvez repartir de zéro si vous le souhaitez. Veillez toutefois à conserver la même structure pour le projet.
