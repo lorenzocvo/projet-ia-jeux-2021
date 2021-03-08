@@ -22,7 +22,9 @@ Comme critère de victoire, on considère :
 Les déplacements des équipes obéissent à quelques règles précises:
 * les tours alternent entre équipes: les agents de l'équipe A peuvent tous bouger, puis ceux de l'équipe B, etc.
 * les agents se déplacent sur une case adjacente ou restent au même endroit;
-* un agent peut se déplacer vers une case si celle-ci est libre ou libérée dans le même tour par un joueur de la même équipe. Une exception est faite pour les échanges de positions entre deux agents, qui n'est pas permise.
+* il faut éviter toute collision: un agent peut se déplacer vers une case si celle-ci est libre ou libérée dans le même tour par un joueur de la même équipe. Une exception est faite pour les échanges de positions entre deux agents, qui n'est pas permise. (Cela supposerait que les agents se croisent).
+
+
 
 
 
@@ -57,6 +59,8 @@ Vous devrez pour ce projet:
 * mettre en évidence 3 situations intéressantes que vous aurez observées pendant vos tests, en expliquant les choix fait par vos stratégies dans ces situations;
 * comparer les résultats de vos stratégies, en mettant en compétition vos équipes sur des cartes denses en obstacles comme `exAdvCoopMap`. On suggère de commencer avec des équipes de 3 à 5 agents par équipe. Vous pourrez répéter les simulations en variant les localisations des agents et des objets dans des zones définies, et donner les moyennes sur les paries simulées, afin d'avoir des résultats significatifs (voir [2]).
 
+On pourra supposer que les informations concernant les positions des agents (équipiers et adversaires) ainsi que des objectifs sont disponibles. Au sein d'une équipe, les agents connaissent aussi l'attribution des objectifs aux autres agents (mais ce n'est pas le cas pour les agents de l'autre équipe). 
+
 
 
 ## Organisation du template fourni
@@ -68,7 +72,7 @@ Les cartes sont dans un sous-répertoire `Cartes`. Celles-ci sont réalisées av
   * un répertoire `search` qui contient les algos de résolution. Il ne contient pour le moment que A* (repris du code montré en cours et instancié pour les grilles 2D avec la distance de Manhattan).
   * un programme `main.py` qui contient un exemple de code vous permettant de prendre en main l'environnement. Ici, deux joueurs cherchent à aller chercher un objet qui leur est attribué au hasard. Le premier joueur utilise A* pour calculer son chemin, tandis que le deuxième joueur fait une marche aléatoire. Comme vous pouvez l'imaginer, il gagne moins souvent...
   > **Attention**: *aucune gestion des collisions n'est réalisée ici. Les agents peuvent donc parfois se retrouver sur la même case*. Il vous faudra bien sûr gérer ces contraintes dans votre projet. Notez que vous ne devez pas utiliser les fichiers `collision.py` etc. qui empêchent au niveau du jeu les collisions. Ce sont ici les agents qui doivent anticiper ces collisions.
-  
+
 * `docs`, un répertoire vide pour l'instant, qui a vocation a accueillir votre documentation (par exemple vos résultats), et le rapport de fin du projet (qui pourra prendre la forme d'un pdf de 5 pages max, ou d'un notebook).
 
 Le template n'est bien sûr fourni qu'à titre d'exemple, vous pouvez repartir de zéro si vous le souhaitez. Veillez toutefois à conserver la même structure pour le projet.
