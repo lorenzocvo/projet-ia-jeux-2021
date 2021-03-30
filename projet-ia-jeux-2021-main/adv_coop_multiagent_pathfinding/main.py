@@ -228,7 +228,7 @@ def main():
                 if(team[i]==0):
                     strategie[i]=0
                 else:
-                    strategie[i]=1
+                    strategie[i]=2
 
 
 
@@ -241,7 +241,7 @@ def main():
             if(team[i]==0):
                 strategie[i]=0
             else:
-                strategie[i]=1
+                strategie[i]=2
 
 
 
