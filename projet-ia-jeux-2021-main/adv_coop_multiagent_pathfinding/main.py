@@ -225,11 +225,7 @@ def main():
             random.shuffle(team)
             random.shuffle(objectifs)
             for i in range(0,len(players)):
-                if(team[i]==0):
-                    strategie[i]=0
-                else:
-                    strategie[i]=2
-
+                strategie[i]=0
 
 
     # exemple de confrontation entre la stratégie Local repair A* et Hierarchilal Cooperative A* 
@@ -238,10 +234,7 @@ def main():
         random.shuffle(team)
         random.shuffle(objectifs)
         for i in range(0,len(players)):
-            if(team[i]==0):
-                strategie[i]=0
-            else:
-                strategie[i]=2
+            strategie[i]=0
 
 
 
@@ -396,7 +389,7 @@ def main():
         
         if(scoreteam0>=len(players)/2):
             print("L'équipe 0 a gagné")
-            
+            return 0
             break
 
         # s'il y a un nombre de joueurs impairs, il y aura un joueur de l'équipe 1 en moins, on prend ça en compte pour vérifier
@@ -405,12 +398,12 @@ def main():
         if(len(players)%2==0):
             if(scoreteam1==len(players)/2):
                 print("L'équipe 1 a gagné")
-                
+                return 1
                 break
         else:
             if(scoreteam1+1==len(players)/2):
                 print("L'équipe 1 a gagné")
-                
+                return 1
                 break
 
 
@@ -426,10 +419,17 @@ def main():
 
 
         if(blocage==1):
-            event = pygame.event.wait()
+
+            while True:
+                event = pygame.event.wait()
+                
+                if event.type == pygame.KEYDOWN:
+                    break
+            #pygame.event.clear()
+            #event = pygame.event.wait()
             
-            if event.type == pygame.KEYDOWN:
-                blocage=1
+            #event.type == pygame.KEYUP
+               
             
 
         game.mainiteration()
@@ -445,18 +445,18 @@ def main():
         print("fin iteration")
         if(scoreteam0>scoreteam1):
             print("L'équipe 0 a gagné")
-            
+            return 0
         elif(scoreteam0<scoreteam1):
             print("L'équipe 1 a gagné")
-            
+            return 1
 
         else:
             if(scoreposteam0>scoreposteam1):
                 print("L'équipe 0 a gagné")
-                
+                return 0
             elif(scoreposteam0<scoreposteam1):
                 print("L'équipe 1 a gagné")
-                
+                return 1
             else:
                 print("Egalité parfaite")
 
